@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkt.mapper.VisitrecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.zkt.entity.Visitrecord">
+            <id property="recordid" column="RecordID" jdbcType="INTEGER"/>
+            <result property="employeeid" column="EmployeeID" jdbcType="INTEGER"/>
+            <result property="visitorid" column="VisitorID" jdbcType="INTEGER"/>
+            <result property="vehicleid" column="VehicleID" jdbcType="INTEGER"/>
+            <result property="recordtime" column="RecordTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        RecordID,EmployeeID,VisitorID,
+        VehicleID,RecordTime
+    </sql>
+</mapper>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkt.mapper.BlacklistMapper">
+
+    <resultMap id="BaseResultMap" type="com.zkt.entity.Blacklist">
+            <id property="visitorid" column="VisitorID" jdbcType="INTEGER"/>
+            <result property="reason" column="Reason" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        VisitorID,Reason
+    </sql>
+</mapper>
