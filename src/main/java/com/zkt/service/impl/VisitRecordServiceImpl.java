@@ -1,9 +1,9 @@
 package com.zkt.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zkt.entity.Visitrecord;
-import com.zkt.service.VisitrecordService;
-import com.zkt.mapper.VisitrecordMapper;
+import com.zkt.entity.VisitRecord;
+import com.zkt.service.VisitRecordService;
+import com.zkt.mapper.VisitRecordMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 * @createDate 2023-03-29 13:38:31
 */
 @Service
-public class VisitrecordServiceImpl extends ServiceImpl<VisitrecordMapper, Visitrecord>
-    implements VisitrecordService{
+public class VisitRecordServiceImpl extends ServiceImpl<VisitRecordMapper, VisitRecord>
+    implements VisitRecordService {
 
 }
 

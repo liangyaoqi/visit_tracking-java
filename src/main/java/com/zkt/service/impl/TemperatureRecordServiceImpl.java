@@ -1,9 +1,9 @@
 package com.zkt.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zkt.entity.Temperaturerecord;
-import com.zkt.service.TemperaturerecordService;
-import com.zkt.mapper.TemperaturerecordMapper;
+import com.zkt.entity.TemperatureRecord;
+import com.zkt.service.TemperatureRecordService;
+import com.zkt.mapper.TemperatureRecordMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 * @createDate 2023-03-29 13:38:05
 */
 @Service
-public class TemperaturerecordServiceImpl extends ServiceImpl<TemperaturerecordMapper, Temperaturerecord>
-    implements TemperaturerecordService{
+public class TemperatureRecordServiceImpl extends ServiceImpl<TemperatureRecordMapper, TemperatureRecord>
+    implements TemperatureRecordService {
 
 }
 

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zkt.mapper.TemperaturerecordMapper">
+<mapper namespace="com.zkt.mapper.TemperatureRecordMapper">
 
-    <resultMap id="BaseResultMap" type="com.zkt.entity.Temperaturerecord">
+    <resultMap id="BaseResultMap" type="com.zkt.entity.TemperatureRecord">
             <id property="recordid" column="RecordID" jdbcType="INTEGER"/>
             <result property="visitorid" column="VisitorID" jdbcType="INTEGER"/>
             <result property="measuretime" column="MeasureTime" jdbcType="TIMESTAMP"/>

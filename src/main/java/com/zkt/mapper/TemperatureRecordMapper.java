@@ -1,6 +1,6 @@
 package com.zkt.mapper;
 
-import com.zkt.entity.Temperaturerecord;
+import com.zkt.entity.TemperatureRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-03-29 13:38:05
 * @Entity com.zkt.entity.Temperaturerecord
 */
-public interface TemperaturerecordMapper extends BaseMapper<Temperaturerecord> {
+public interface TemperatureRecordMapper extends BaseMapper<TemperatureRecord> {
 
 }
 

@@ -1,6 +1,6 @@
 package com.zkt.mapper;
 
-import com.zkt.entity.Visitrecord;
+import com.zkt.entity.VisitRecord;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2023-03-29 13:38:31
 * @Entity com.zkt.entity.Visitrecord
 */
-public interface VisitrecordMapper extends BaseMapper<Visitrecord> {
+public interface VisitRecordMapper extends BaseMapper<VisitRecord> {
 
 }
 

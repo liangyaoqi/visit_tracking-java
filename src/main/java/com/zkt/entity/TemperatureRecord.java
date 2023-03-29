@@ -10,22 +10,16 @@ import lombok.Data;
 
 /**
  * 
- * @TableName VisitRecord
+ * @TableName TemperatureRecord
  */
-@TableName(value ="VisitRecord")
+@TableName(value ="TemperatureRecord")
 @Data
-public class Visitrecord implements Serializable {
+public class TemperatureRecord implements Serializable {
     /**
      * 
      */
-    @TableId(value = "RecordID")
+    @TableId(value = "RecordID", type = IdType.AUTO)
     private Integer recordid;
-
-    /**
-     * 
-     */
-    @TableField(value = "EmployeeID")
-    private Integer employeeid;
 
     /**
      * 
@@ -36,14 +30,14 @@ public class Visitrecord implements Serializable {
     /**
      * 
      */
-    @TableField(value = "VehicleID")
-    private Integer vehicleid;
+    @TableField(value = "MeasureTime")
+    private Date measuretime;
 
     /**
      * 
      */
-    @TableField(value = "RecordTime")
-    private Date recordtime;
+    @TableField(value = "Temperature")
+    private Double temperature;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -59,12 +53,11 @@ public class Visitrecord implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Visitrecord other = (Visitrecord) that;
+        TemperatureRecord other = (TemperatureRecord) that;
         return (this.getRecordid() == null ? other.getRecordid() == null : this.getRecordid().equals(other.getRecordid()))
-            && (this.getEmployeeid() == null ? other.getEmployeeid() == null : this.getEmployeeid().equals(other.getEmployeeid()))
             && (this.getVisitorid() == null ? other.getVisitorid() == null : this.getVisitorid().equals(other.getVisitorid()))
-            && (this.getVehicleid() == null ? other.getVehicleid() == null : this.getVehicleid().equals(other.getVehicleid()))
-            && (this.getRecordtime() == null ? other.getRecordtime() == null : this.getRecordtime().equals(other.getRecordtime()));
+            && (this.getMeasuretime() == null ? other.getMeasuretime() == null : this.getMeasuretime().equals(other.getMeasuretime()))
+            && (this.getTemperature() == null ? other.getTemperature() == null : this.getTemperature().equals(other.getTemperature()));
     }
 
     @Override
@@ -72,10 +65,9 @@ public class Visitrecord implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getRecordid() == null) ? 0 : getRecordid().hashCode());
-        result = prime * result + ((getEmployeeid() == null) ? 0 : getEmployeeid().hashCode());
         result = prime * result + ((getVisitorid() == null) ? 0 : getVisitorid().hashCode());
-        result = prime * result + ((getVehicleid() == null) ? 0 : getVehicleid().hashCode());
-        result = prime * result + ((getRecordtime() == null) ? 0 : getRecordtime().hashCode());
+        result = prime * result + ((getMeasuretime() == null) ? 0 : getMeasuretime().hashCode());
+        result = prime * result + ((getTemperature() == null) ? 0 : getTemperature().hashCode());
         return result;
     }
 
@@ -86,10 +78,9 @@ public class Visitrecord implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", recordid=").append(recordid);
-        sb.append(", employeeid=").append(employeeid);
         sb.append(", visitorid=").append(visitorid);
-        sb.append(", vehicleid=").append(vehicleid);
-        sb.append(", recordtime=").append(recordtime);
+        sb.append(", measuretime=").append(measuretime);
+        sb.append(", temperature=").append(temperature);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
