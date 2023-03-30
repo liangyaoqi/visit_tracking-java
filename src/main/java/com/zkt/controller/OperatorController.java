@@ -5,6 +5,8 @@ import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zkt.entity.Operator;
 import com.zkt.service.OperatorService;
 import com.zkt.util.ApiResponse;
@@ -14,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @Slf4j
@@ -66,6 +70,12 @@ public class OperatorController {
     public ApiResponse<Operator> getOperatorInfo() {
         Operator operator = (Operator) StpUtil.getSession().get(Constant.SESSION_USER_KEY);
         return ApiResponse.success(operator);
+    }
+
+    @GetMapping("/list/{page}/{size}")
+    public ApiResponse<List<Operator>> list(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
+        Page<Operator> operatorPage = new Page<>(page, size);
+        return ApiResponse.success(operatorService.page(operatorPage).getRecords());
     }
 
 
