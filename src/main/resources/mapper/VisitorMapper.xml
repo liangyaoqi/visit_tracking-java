@@ -13,11 +13,18 @@
             <result property="visittime" column="VisitTime" jdbcType="TIMESTAMP"/>
             <result property="leavetime" column="LeaveTime" jdbcType="TIMESTAMP"/>
             <result property="isepidemicarea" column="IsEpidemicArea" jdbcType="INTEGER"/>
+            <result property="temperature" column="Temperature" jdbcType="DOUBLE"/>
+            <result property="vehicleid" column="VehicleId" jdbcType="VARCHAR"/>
+            <result property="enter" column="enter" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         VisitorID,Name,IDCard,
         CompanyName,Reason,VisitTime,
-        LeaveTime,IsEpidemicArea
+        LeaveTime,IsEpidemicArea,Temperature,
+        VehicleId,enter
     </sql>
+
+
+
 </mapper>

@@ -6,15 +6,27 @@ import com.zkt.service.VisitorService;
 import com.zkt.mapper.VisitorMapper;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
+
 /**
-* @author 梁耀其
+* @author Leon
 * @description 针对表【Visitor】的数据库操作Service实现
-* @createDate 2023-03-29 13:38:21
+* @createDate 2023-04-02 09:43:25
 */
 @Service
 public class VisitorServiceImpl extends ServiceImpl<VisitorMapper, Visitor>
     implements VisitorService{
 
+
+    @Resource
+    private VisitorMapper visitorMapper;
+
+    @Override
+    public List<Visitor> listByCustom(Visitor visitor) {
+//        visitorMapper.selectMaps()
+        return null;
+    }
 }
 
 

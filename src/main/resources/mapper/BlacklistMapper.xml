@@ -5,11 +5,11 @@
 <mapper namespace="com.zkt.mapper.BlacklistMapper">
 
     <resultMap id="BaseResultMap" type="com.zkt.entity.Blacklist">
-            <id property="visitorid" column="VisitorID" jdbcType="INTEGER"/>
+            <id property="idcar" column="IdCar" jdbcType="VARCHAR"/>
             <result property="reason" column="Reason" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        VisitorID,Reason
+        IdCar,Reason
     </sql>
 </mapper>

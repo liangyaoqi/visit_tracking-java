@@ -72,11 +72,19 @@ public class OperatorController {
         return ApiResponse.success(operator);
     }
 
-    @GetMapping("/list/{page}/{size}")
-    public ApiResponse<List<Operator>> list(@PathVariable("page") Integer page, @PathVariable("size") Integer size) {
-        Page<Operator> operatorPage = new Page<>(page, size);
-        return ApiResponse.success(operatorService.page(operatorPage).getRecords());
+    @GetMapping("/list")
+    public ApiResponse<List<Operator>> list() {
+        List<Operator> list = operatorService.list();
+        return ApiResponse.success(list);
     }
 
+    @PostMapping("/update")
+    public ApiResponse update(@RequestBody Operator operator) {
+        boolean update = operatorService.updateById(operator);
+        if (update) {
+            return ApiResponse.success("修改成功");
+        }
+        return ApiResponse.error("修改失败");
+    }
 
 }

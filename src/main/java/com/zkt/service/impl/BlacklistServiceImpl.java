@@ -7,9 +7,9 @@ import com.zkt.mapper.BlacklistMapper;
 import org.springframework.stereotype.Service;
 
 /**
-* @author 梁耀其
-* @description 针对表【Blacklist】的数据库操作Service实现
-* @createDate 2023-03-29 13:37:50
+* @author Leon
+* @description 针对表【BlackList】的数据库操作Service实现
+* @createDate 2023-04-02 14:48:15
 */
 @Service
 public class BlacklistServiceImpl extends ServiceImpl<BlacklistMapper, Blacklist>

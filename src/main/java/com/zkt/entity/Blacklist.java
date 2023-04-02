@@ -9,16 +9,16 @@ import lombok.Data;
 
 /**
  * 
- * @TableName Blacklist
+ * @TableName BlackList
  */
-@TableName(value ="Blacklist")
+@TableName(value ="BlackList")
 @Data
 public class Blacklist implements Serializable {
     /**
      * 
      */
-    @TableId(value = "VisitorID")
-    private Integer visitorid;
+    @TableId(value = "IdCar")
+    private String idcar;
 
     /**
      * 
@@ -41,7 +41,7 @@ public class Blacklist implements Serializable {
             return false;
         }
         Blacklist other = (Blacklist) that;
-        return (this.getVisitorid() == null ? other.getVisitorid() == null : this.getVisitorid().equals(other.getVisitorid()))
+        return (this.getIdcar() == null ? other.getIdcar() == null : this.getIdcar().equals(other.getIdcar()))
             && (this.getReason() == null ? other.getReason() == null : this.getReason().equals(other.getReason()));
     }
 
@@ -49,7 +49,7 @@ public class Blacklist implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getVisitorid() == null) ? 0 : getVisitorid().hashCode());
+        result = prime * result + ((getIdcar() == null) ? 0 : getIdcar().hashCode());
         result = prime * result + ((getReason() == null) ? 0 : getReason().hashCode());
         return result;
     }
@@ -60,7 +60,7 @@ public class Blacklist implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", visitorid=").append(visitorid);
+        sb.append(", idcar=").append(idcar);
         sb.append(", reason=").append(reason);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
