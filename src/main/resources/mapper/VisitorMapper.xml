@@ -10,7 +10,7 @@
             <result property="idcard" column="IDCard" jdbcType="VARCHAR"/>
             <result property="companyname" column="CompanyName" jdbcType="VARCHAR"/>
             <result property="reason" column="Reason" jdbcType="VARCHAR"/>
-            <result property="visittime" column="VisitTime" jdbcType="TIMESTAMP"/>
+            <result property="visittime" column="VisitTime" jdbcType="VARCHAR"/>
             <result property="leavetime" column="LeaveTime" jdbcType="TIMESTAMP"/>
             <result property="isepidemicarea" column="IsEpidemicArea" jdbcType="INTEGER"/>
             <result property="temperature" column="Temperature" jdbcType="DOUBLE"/>
@@ -25,6 +25,22 @@
         VehicleId,enter
     </sql>
 
+    <select id="findVisitor" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from Visitor
+        <where>
+            <if test="name != null">
+                and Name = #{name}
+            </if>
+            <if test="visittime != null">
+                and VisitTime like concat(#{visittime},'%')
+            </if>
+            <if test="enter != null">
+                and enter = #{enter}
+            </if>
+        </where>
+    </select>
 
 
 </mapper>

@@ -87,4 +87,15 @@ public class OperatorController {
         return ApiResponse.error("修改失败");
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ApiResponse delete(@PathVariable("id") Integer id) {
+        boolean remove = operatorService.removeById(id);
+        if (remove) {
+            return ApiResponse.success("删除成功");
+        }
+        return ApiResponse.error("删除失败");
+    }
+
+
+
 }

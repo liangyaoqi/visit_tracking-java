@@ -4,6 +4,8 @@ import com.zkt.entity.Visitor;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
 * @author Leon
 * @description 针对表【Visitor】的数据库操作Mapper
@@ -12,6 +14,8 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface VisitorMapper extends BaseMapper<Visitor> {
+
+        List<Visitor> findVisitor (Visitor visitor);
 
 }
 

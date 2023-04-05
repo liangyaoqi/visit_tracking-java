@@ -3,6 +3,7 @@ package com.zkt.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.google.protobuf.Api;
 import com.zkt.entity.Blacklist;
 import com.zkt.entity.Visitor;
 import com.zkt.service.BlacklistService;
@@ -11,6 +12,8 @@ import com.zkt.util.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/blacklist")
@@ -23,10 +26,8 @@ public class BlacklistController {
 
 
     @GetMapping
-    public ApiResponse<IPage<Blacklist>> list(@RequestParam(defaultValue = "1") Integer page,
-                                              @RequestParam(defaultValue = "10") Integer size) {
-        Page<Blacklist> blacklistPage = new Page<>(page, size);
-        return ApiResponse.success(blacklistService.page(blacklistPage));
+    public ApiResponse<List<Blacklist>> list() {
+        return ApiResponse.success(blacklistService.list());
     }
 
     @Autowired
@@ -45,7 +46,7 @@ public class BlacklistController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ApiResponse delete(@PathVariable("id") Integer id) {
+    public ApiResponse delete(@PathVariable("id") String id) {
         boolean remove = blacklistService.removeById(id);
         if (remove) {
             return ApiResponse.success("删除成功");
