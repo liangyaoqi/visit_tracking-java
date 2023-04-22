@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
 * @author Leon
 * @description 针对表【BlackList】的数据库操作Service实现
-* @createDate 2023-04-02 14:48:15
+* @createDate 2023-04-22 16:03:52
 */
 @Service
 public class BlacklistServiceImpl extends ServiceImpl<BlacklistMapper, Blacklist>

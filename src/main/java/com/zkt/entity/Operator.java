@@ -62,6 +62,12 @@ public class Operator implements Serializable {
     @TableField(value = "Password")
     private String password;
 
+    /**
+     * 管理员ID
+     */
+    @TableField(value = "DeptId")
+    private String deptid;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -84,7 +90,8 @@ public class Operator implements Serializable {
             && (this.getPosition() == null ? other.getPosition() == null : this.getPosition().equals(other.getPosition()))
             && (this.getIsadmin() == null ? other.getIsadmin() == null : this.getIsadmin().equals(other.getIsadmin()))
             && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()));
+            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
+            && (this.getDeptid() == null ? other.getDeptid() == null : this.getDeptid().equals(other.getDeptid()));
     }
 
     @Override
@@ -99,6 +106,7 @@ public class Operator implements Serializable {
         result = prime * result + ((getIsadmin() == null) ? 0 : getIsadmin().hashCode());
         result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        result = prime * result + ((getDeptid() == null) ? 0 : getDeptid().hashCode());
         return result;
     }
 
@@ -116,6 +124,7 @@ public class Operator implements Serializable {
         sb.append(", isadmin=").append(isadmin);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
+        sb.append(", deptid=").append(deptid);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

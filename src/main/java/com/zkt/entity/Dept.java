@@ -9,28 +9,22 @@ import lombok.Data;
 
 /**
  * 
- * @TableName BlackList
+ * @TableName Dept
  */
-@TableName(value ="BlackList")
+@TableName(value ="Dept")
 @Data
-public class Blacklist implements Serializable {
+public class Dept implements Serializable {
     /**
      * 
      */
-    @TableId(value = "IdCar")
-    private String idcar;
+    @TableId(value = "dept_id", type = IdType.AUTO)
+    private Integer deptId;
 
     /**
      * 
      */
-    @TableField(value = "Reason")
-    private String reason;
-
-    /**
-     * 
-     */
-    @TableField(value = "name")
-    private String name;
+    @TableField(value = "dept_name")
+    private String deptName;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -46,19 +40,17 @@ public class Blacklist implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Blacklist other = (Blacklist) that;
-        return (this.getIdcar() == null ? other.getIdcar() == null : this.getIdcar().equals(other.getIdcar()))
-            && (this.getReason() == null ? other.getReason() == null : this.getReason().equals(other.getReason()))
-            && (this.getName() == null ? other.getName() == null : this.getName().equals(other.getName()));
+        Dept other = (Dept) that;
+        return (this.getDeptId() == null ? other.getDeptId() == null : this.getDeptId().equals(other.getDeptId()))
+            && (this.getDeptName() == null ? other.getDeptName() == null : this.getDeptName().equals(other.getDeptName()));
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((getIdcar() == null) ? 0 : getIdcar().hashCode());
-        result = prime * result + ((getReason() == null) ? 0 : getReason().hashCode());
-        result = prime * result + ((getName() == null) ? 0 : getName().hashCode());
+        result = prime * result + ((getDeptId() == null) ? 0 : getDeptId().hashCode());
+        result = prime * result + ((getDeptName() == null) ? 0 : getDeptName().hashCode());
         return result;
     }
 
@@ -68,9 +60,8 @@ public class Blacklist implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", idcar=").append(idcar);
-        sb.append(", reason=").append(reason);
-        sb.append(", name=").append(name);
+        sb.append(", deptId=").append(deptId);
+        sb.append(", deptName=").append(deptName);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

@@ -13,11 +13,12 @@
             <result property="isadmin" column="IsAdmin" jdbcType="OTHER"/>
             <result property="username" column="UserName" jdbcType="VARCHAR"/>
             <result property="password" column="Password" jdbcType="VARCHAR"/>
+            <result property="deptid" column="DeptId" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         OperatorID,Name,PhoneNumber,
         Email,Position,IsAdmin,
-        UserName,Password
+        UserName,Password,DeptId
     </sql>
 </mapper>

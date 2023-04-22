@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 /**
 * @author Leon
 * @description 针对表【BlackList】的数据库操作Mapper
-* @createDate 2023-04-02 14:48:15
+* @createDate 2023-04-22 16:03:52
 * @Entity com.zkt.entity.Blacklist
 */
 @Mapper

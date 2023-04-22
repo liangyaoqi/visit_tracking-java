@@ -7,9 +7,10 @@
     <resultMap id="BaseResultMap" type="com.zkt.entity.Blacklist">
             <id property="idcar" column="IdCar" jdbcType="VARCHAR"/>
             <result property="reason" column="Reason" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        IdCar,Reason
+        IdCar,Reason,name
     </sql>
 </mapper>
