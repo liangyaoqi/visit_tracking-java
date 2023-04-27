@@ -96,6 +96,14 @@ public class OperatorController {
         return ApiResponse.error("删除失败");
     }
 
+    @GetMapping("/{id}")
+    public ApiResponse<Operator> get(@PathVariable("id") Integer id) {
+        Operator operator = operatorService.getById(id);
+        if (operator == null) {
+            return ApiResponse.error("没有该用户");
+        }
+        return ApiResponse.success(operator);
+    }
 
 
 }
