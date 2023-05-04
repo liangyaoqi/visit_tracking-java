@@ -71,4 +71,17 @@ public class BlacklistController {
         }
         return ApiResponse.success(blacklist);
     }
+
+    @PostMapping("/getBlacklist")
+    public ApiResponse<List<Blacklist>> get(@RequestBody Blacklist blacklist) {
+        LambdaQueryWrapper<Blacklist> wrapper = new LambdaQueryWrapper<>();
+        if (blacklist.getIdcar() != null) {
+            wrapper.eq(Blacklist::getIdcar, blacklist.getIdcar());
+        }
+        if (blacklist.getName() != null) {
+            wrapper.eq(Blacklist::getName, blacklist.getName());
+        }
+        List<Blacklist> blacklists = blacklistService.list(wrapper);
+        return ApiResponse.success(blacklists);
+    }
 }

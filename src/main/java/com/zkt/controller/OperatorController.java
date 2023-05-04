@@ -50,6 +50,12 @@ public class OperatorController {
         return SaResult.ok().setData(tokenInfo.getTokenValue());
     }
 
+    @GetMapping("/getOperatorById/{id}")
+    public ApiResponse<Operator> getOperatorById(@PathVariable("id") Integer id) {
+        Operator operator = operatorService.getById(id);
+        return ApiResponse.success(operator);
+    }
+
     @PostMapping("/registry")
     @Transactional(rollbackFor = Exception.class)
     public ApiResponse registry(@RequestBody Operator operator) {
@@ -104,6 +110,5 @@ public class OperatorController {
         }
         return ApiResponse.success(operator);
     }
-
 
 }
