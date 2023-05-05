@@ -80,7 +80,9 @@ public class OperatorController {
 
     @GetMapping("/list")
     public ApiResponse<List<Operator>> list() {
-        List<Operator> list = operatorService.list();
+        LambdaQueryWrapper<Operator> wrapper = new LambdaQueryWrapper<>();
+        wrapper.ne(Operator::getUsername, "admin");
+        List<Operator> list = operatorService.list(wrapper);
         return ApiResponse.success(list);
     }
 
